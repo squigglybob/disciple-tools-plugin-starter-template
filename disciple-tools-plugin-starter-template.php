@@ -127,6 +127,9 @@ class Disciple_Tools_Plugin_Starter_Template {
          */
         require_once( 'magic-link/magic-link-post-type.php' );
         require_once( 'magic-link/magic-link-user-app.php' );
+        require_once( 'magic-link/magic-link-non-object.php' );
+        require_once( 'magic-link/magic-link-map.php' );
+//        require_once( 'magic-link/magic-link-home.php' );
 
         /**
          * @todo Decide if you want to add a custom admin page in the admin area
