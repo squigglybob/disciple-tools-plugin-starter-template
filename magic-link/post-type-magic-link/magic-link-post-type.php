@@ -84,18 +84,39 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Link extends DT_Magic_Url_Bas
         add_action( 'dt_blank_body', [ $this, 'body' ] ); // body for no post key
         add_filter( 'dt_magic_url_base_allowed_css', [ $this, 'dt_magic_url_base_allowed_css' ], 10, 1 );
         add_filter( 'dt_magic_url_base_allowed_js', [ $this, 'dt_magic_url_base_allowed_js' ], 10, 1 );
+        add_action( 'wp_enqueue_scripts', [ $this, 'wp_enqueue_scripts' ], 100 );
 
+    }
+
+    public function wp_enqueue_scripts(){
+        wp_enqueue_script( 'magic_link_scripts', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'magic-link.js', [
+            'jquery',
+            'lodash',
+        ], filemtime( plugin_dir_path( __FILE__ ) . 'magic-link.js' ), true );
+        wp_localize_script(
+            'magic_link_scripts', 'jsObject', [
+                'map_key' => DT_Mapbox_API::get_key(),
+                'rest_base' => esc_url( rest_url() ),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'parts' => $this->parts,
+                'translations' => [
+                    'add' => __( 'Add Magic', 'disciple-tools-plugin-starter-template' ),
+                ],
+                'rest_namespace' => $this->root . '/v1/' . $this->type,
+            ]
+        );
+        wp_enqueue_style( 'magic_link_css', trailingslashit( plugin_dir_url( __FILE__ ) ) . 'magic-link.css', [], filemtime( plugin_dir_path( __FILE__ ) . 'magic-link.css' ) );
     }
 
     public function dt_magic_url_base_allowed_js( $allowed_js ) {
         // @todo add or remove js files with this filter
-        // example: $allowed_js[] = 'your-enqueue-handle';
+        $allowed_js[] = 'magic_link_scripts';
         return $allowed_js;
     }
 
     public function dt_magic_url_base_allowed_css( $allowed_css ) {
         // @todo add or remove js files with this filter
-        // example: $allowed_css[] = 'your-enqueue-handle';
+        $allowed_css[] = 'magic_link_css';
         return $allowed_css;
     }
 
@@ -115,14 +136,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Link extends DT_Magic_Url_Bas
         // test if campaigns post type and campaigns_app_module enabled
         if ( $post_type === $this->post_type ) {
             if ( 'dt_starters_magic_url' === $section ) {
-                $record = DT_Posts::get_post( $post_type, get_the_ID() );
-                if ( isset( $record[$this->meta_key] ) ) {
-                    $key = $record[$this->meta_key];
-                } else {
-                    $key = dt_create_unique_key();
-                    update_post_meta( get_the_ID(), $this->meta_key, $key );
-                }
-                $link = DT_Magic_URL::get_link_url( $this->root, $this->type, $key )
+                $link = DT_Magic_URL::get_link_url_for_post( $post_type, get_the_ID(), $this->root, $this->type )
                 ?>
                 <p>See help <img class="dt-icon" src="<?php echo esc_html( get_template_directory_uri() . '/dt-assets/images/help.svg' ) ?>"/> for description.</p>
                 <a class="button" href="<?php echo esc_html( $link ); ?>" target="_blank">Open magic link</a>
@@ -155,137 +169,9 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Link extends DT_Magic_Url_Bas
         return $apps_list;
     }
 
-    /**
-     * Writes custom styles to header
-     *
-     * @see DT_Magic_Url_Base()->header_style() for default state
-     * @todo remove if not needed
-     */
-    public function header_style(){
-        ?>
-        <style>
-            body {
-                background-color: white;
-                padding: 1em;
-            }
-        </style>
-        <?php
-    }
-
-    /**
-     * Writes javascript to the header
-     *
-     * @see DT_Magic_Url_Base()->header_javascript() for default state
-     * @todo remove if not needed
-     */
-    public function header_javascript(){
-        ?>
-        <script>
-            console.log('insert header_javascript')
-        </script>
-        <?php
-    }
-
-    /**
-     * Writes javascript to the footer
-     *
-     * @see DT_Magic_Url_Base()->footer_javascript() for default state
-     * @todo remove if not needed
-     */
-    public function footer_javascript(){
-        ?>
-        <script>
-            console.log('insert footer_javascript')
-
-            let jsObject = [<?php echo json_encode([
-                'map_key' => DT_Mapbox_API::get_key(),
-                'root' => esc_url_raw( rest_url() ),
-                'nonce' => wp_create_nonce( 'wp_rest' ),
-                'parts' => $this->parts,
-                'translations' => [
-                    'add' => __( 'Add Magic', 'disciple-tools-plugin-starter-template' ),
-                ],
-            ]) ?>][0]
-
-            window.get_magic = () => {
-                jQuery.ajax({
-                    type: "GET",
-                    data: { action: 'get', parts: jsObject.parts },
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    url: jsObject.root + jsObject.parts.root + '/v1/' + jsObject.parts.type,
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('X-WP-Nonce', jsObject.nonce )
-                    }
-                })
-                .done(function(data){
-                    window.load_magic( data )
-                })
-                .fail(function(e) {
-                    console.log(e)
-                    jQuery('#error').html(e)
-                })
-            }
-            window.get_magic()
-
-            window.load_magic = ( data ) => {
-                let content = jQuery('#api-content')
-                let spinner = jQuery('.loading-spinner')
-
-                content.empty()
-                let html = ``
-                data.forEach(v=>{
-                    html += `
-                         <div class="cell">
-                             ${window.lodash.escape(v.name)}
-                         </div>
-                     `
-                })
-                content.html(html)
-
-                spinner.removeClass('active')
-
-            }
-
-            $('.dt_date_picker').datepicker({
-                constrainInput: false,
-                dateFormat: 'yy-mm-dd',
-                changeMonth: true,
-                changeYear: true,
-                yearRange: "1900:2050",
-            }).each(function() {
-                if (this.value && moment.unix(this.value).isValid()) {
-                    this.value = window.SHAREDFUNCTIONS.formatDate(this.value);
-                }
-            })
-
-
-            $('#submit-form').on("click", function (){
-                $(this).addClass("loading")
-                let start_date = $('#start_date').val()
-                let comment = $('#comment-input').val()
-                let update = {
-                    start_date,
-                    comment
-                }
-
-                window.makeRequest( "POST", jsObject.parts.type, { parts: jsObject.parts, update }, jsObject.parts.root + '/v1/' ).done(function(data){
-                    window.location.reload()
-                })
-                .fail(function(e) {
-                    console.log(e)
-                    jQuery('#error').html(e)
-                })
-            })
-        </script>
-        <?php
-        return true;
-    }
-
     public function body(){
         ?>
-        <div id="custom-style"></div>
-        <div id="wrapper">
+        <div id="magic-link-wrapper">
             <div class="grid-x">
                 <div class="cell center">
                     <h2 id="title">Title</h2>
@@ -336,7 +222,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Link extends DT_Magic_Url_Bas
     public function add_endpoints() {
         $namespace = $this->root . '/v1';
         register_rest_route(
-            $namespace, '/'.$this->type, [
+            $namespace, '/' . $this->type, [
                 [
                     'methods'  => "GET",
                     'callback' => [ $this, 'endpoint_get' ],
@@ -349,7 +235,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Link extends DT_Magic_Url_Bas
             ]
         );
         register_rest_route(
-            $namespace, '/'.$this->type, [
+            $namespace, '/' . $this->type, [
                 [
                     'methods'  => "POST",
                     'callback' => [ $this, 'update_record' ],
