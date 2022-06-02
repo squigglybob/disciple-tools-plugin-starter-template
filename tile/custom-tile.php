@@ -30,6 +30,7 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
     public function dt_details_additional_tiles( $tiles, $post_type = "" ) {
         if ( $post_type === "contacts" || $post_type === "starter_post_type" ){
             $tiles["disciple_tools_plugin_starter_template"] = [ "label" => __( "Plugin Starter Template", 'disciple-tools-plugin-starter-template' ) ];
+            $tiles["a_beautiful_tile"] = [ "label" => __( "A Beautiful Tile", 'disciple-tools-plugin-starter-template' ) ];
         }
         return $tiles;
     }
@@ -109,6 +110,147 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
                 "default_color" => "#366184",
                 "select_cannot_be_empty" => true
+            ];
+
+            //test fields
+            $fields['number_test'] = [
+                'name'        => __( 'Number field', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'number',
+                'default'     => 0,
+                'tile'        => 'a_beautiful_tile',
+                'min_option'  => "5",
+            ];
+            $fields['number_test_private'] = [
+                'name'        => __( 'Number field private', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'number',
+                'default'     => 0,
+                'tile'        => 'a_beautiful_tile',
+                'private'     => true,
+                'max_option'  => "200",
+            ];
+            $fields['text_test'] = [
+                'name'        => __( 'Text', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'text',
+                'default'     => 0,
+                'tile'      => 'a_beautiful_tile',
+            ];
+            $fields['text_test_private'] = [
+                'name'        => __( 'Text', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'text',
+                'default'     => 0,
+                'tile'      => 'a_beautiful_tile',
+                'private'   => true
+            ];
+            $fields['contact_communication_channel_test'] = [
+                'name'        => __( 'Communication Channel', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'communication_channel',
+                'default'     => 0,
+                'tile'      => 'a_beautiful_tile',
+            ];
+
+            $fields['user_select_test'] = [
+                'name'        => __( 'User Select', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'user_select',
+                'tile'        => 'a_beautiful_tile'
+            ];
+            $fields['array_test'] = [
+                'name'        => __( 'Array', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'array',
+                'tile'        => 'a_beautiful_tile'
+            ];
+            $fields["location_test"] = [
+                'name' => "location field",
+                'type' => 'location',
+                'tile' => 'a_beautiful_tile'
+            ];
+            $fields['date_test'] = [
+                'name'        => __( ' Date Field', 'disciple-tools-plugin-starter-template' ),
+                'description' => '',
+                'type'        => 'date',
+                'default'     => '',
+                'tile' => 'a_beautiful_tile'
+            ];
+            $fields['date_test_private'] = [
+                'name'        => __( ' Date Field', 'disciple-tools-plugin-starter-template' ),
+                'description' => '',
+                'type'        => 'date',
+                'default'     => '',
+                'tile' => 'a_beautiful_tile',
+                'private'   => true
+            ];
+            $fields['boolean_test'] = [
+                'name'        => __( 'Boolean', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'boolean',
+                'default'     => false,
+            ];
+            $fields['boolean_test_private'] = [
+                'name'        => __( 'Boolean', 'disciple-tools-plugin-starter-template' ),
+                'type'        => 'boolean',
+                'default'     => false,
+                'private'   => true
+            ];
+            $fields["multi_select_test"] = [
+                'name' => "Random Options",
+                'type' => "multi_select",
+                "default" => [
+                    "one" => [ "label" => "option 1" ],
+                    "two" => [ "label" => "option 2" ],
+                    "three" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+            ];
+            $fields["multi_select_test_private"] = [
+                'name' => "Random Options",
+                'type' => "multi_select",
+                "default" => [
+                    "one_private" => [ "label" => "option 1" ],
+                    "two_private" => [ "label" => "option 2" ],
+                    "three_private" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+                'private'   => true
+            ];
+            $fields["key_select_test"] = [
+                'name' => "Random Options",
+                'type' => "key_select",
+                "default" => [
+                    "one" => [ "label" => "option 1" ],
+                    "two" => [ "label" => "option 2" ],
+                    "three" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+            ];
+            $fields["key_select_test_private"] = [
+                'name' => "Random Options",
+                'type' => "key_select",
+                "default" => [
+                    "one_private" => [ "label" => "option 1" ],
+                    "two_private" => [ "label" => "option 2" ],
+                    "three_private" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+                'private'   => true
+            ];
+            $fields["tags_test"] = [
+                'name' => "Random Tags",
+                'type' => "tags",
+                "default" => [
+                    "one" => [ "label" => "option 1" ],
+                    "two" => [ "label" => "option 2" ],
+                    "three" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+            ];
+            $fields["tags_test_private"] = [
+                'name' => "Random Tags Private",
+                'type' => "tags",
+                "default" => [
+                    "one" => [ "label" => "option 1" ],
+                    "two" => [ "label" => "option 2" ],
+                    "three" => [ "label" => "option 3" ],
+                ],
+                "tile" => "a_beautiful_tile",
+                'private'   => true
             ];
         }
         return $fields;
