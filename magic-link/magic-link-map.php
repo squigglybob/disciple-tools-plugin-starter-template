@@ -38,7 +38,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Map_App extends DT_Magic_Url_
 
 
             // register url and access
-            add_action( "template_redirect", [ $this, 'theme_redirect' ] );
+            add_action( 'template_redirect', [ $this, 'theme_redirect' ] );
             add_filter( 'dt_blank_access', function (){ return true;
             }, 100, 1 );
             add_filter( 'dt_allow_non_login_access', function (){ return true;
@@ -47,7 +47,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Map_App extends DT_Magic_Url_
             }, 100, 1 );
 
             // header content
-            add_filter( "dt_blank_title", [ $this, "page_tab_title" ] ); // adds basic title to browser tab
+            add_filter( 'dt_blank_title', [ $this, 'page_tab_title' ] ); // adds basic title to browser tab
             add_action( 'wp_print_scripts', [ $this, 'print_scripts' ], 1500 ); // authorizes scripts
             add_action( 'wp_print_styles', [ $this, 'print_styles' ], 1500 ); // authorizes styles
 
@@ -253,7 +253,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Map_App extends DT_Magic_Url_
         $params = $request->get_params();
 
         if ( ! isset( $params['parts'], $params['action'] ) ) {
-            return new WP_Error( __METHOD__, "Missing parameters", [ 'status' => 400 ] );
+            return new WP_Error( __METHOD__, 'Missing parameters', [ 'status' => 400 ] );
         }
 
         $params = dt_recursive_sanitize_array( $params );
@@ -262,7 +262,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_Map_App extends DT_Magic_Url_
             case 'geojson':
                 return $this->endpoint_geojson( $params['parts'] );
             default:
-                return new WP_Error( __METHOD__, "Missing valid action parameters", [ 'status' => 400 ] );
+                return new WP_Error( __METHOD__, 'Missing valid action parameters', [ 'status' => 400 ] );
         }
     }
 

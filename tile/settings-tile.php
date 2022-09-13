@@ -74,8 +74,8 @@ class Disciple_Tools_Plugin_Starter_Template_Settings_Tile
     public function dt_modal_help_text(){
         ?>
         <div class="help-section" id="disciple-tools-plugin-starter-template-help-text" style="display: none">
-            <h3><?php echo esc_html_x( "Custom Settings Section", 'Optional Documentation', 'disciple-tools-plugin-starter-template' ) ?></h3>
-            <p><?php echo esc_html_x( "Add your own help information into this modal.", 'Optional Documentation', 'disciple-tools-plugin-starter-template' ) ?></p>
+            <h3><?php echo esc_html_x( 'Custom Settings Section', 'Optional Documentation', 'disciple-tools-plugin-starter-template' ) ?></h3>
+            <p><?php echo esc_html_x( 'Add your own help information into this modal.', 'Optional Documentation', 'disciple-tools-plugin-starter-template' ) ?></p>
         </div>
         <?php
     }

@@ -9,7 +9,7 @@ if ( !defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly.
 class Disciple_Tools_Plugin_Starter_Template_Chart_Template extends DT_Metrics_Chart_Base
 {
     public $base_slug = 'disciple-tools-plugin-starter-template-metrics'; // lowercase
-    public $base_title = "Plugin Starter Template Metrics";
+    public $base_title = 'Plugin Starter Template Metrics';
 
     public $title = 'Template';
     public $slug = 'template'; // lowercase
@@ -64,8 +64,8 @@ class Disciple_Tools_Plugin_Starter_Template_Chart_Template extends DT_Metrics_C
                     // add preload stats data into arrays here
                 ],
                 'translations' => [
-                    "title" => $this->title,
-                    "Sample API Call" => __( "Sample API Call", 'disciple-tools-plugin-starter-template' )
+                    'title' => $this->title,
+                    'Sample API Call' => __( 'Sample API Call', 'disciple-tools-plugin-starter-template' )
                 ]
             ]
         );

@@ -12,8 +12,8 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
      * @todo update these variables with your post_type, module key, and names.
      * @var string
      */
-    public $post_type = "starter_post_type";
-    public $module = "starter_base";
+    public $post_type = 'starter_post_type';
+    public $module = 'starter_base';
     public $single_name = 'Starter';
     public $plural_name = 'Starters';
     public static function post_type(){
@@ -46,22 +46,22 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
         add_filter( 'dt_get_post_type_settings', [ $this, 'dt_get_post_type_settings' ], 20, 2 );
 
         // hooks
-        add_action( "post_connection_removed", [ $this, "post_connection_removed" ], 10, 4 );
-        add_action( "post_connection_added", [ $this, "post_connection_added" ], 10, 4 );
-        add_filter( "dt_post_update_fields", [ $this, "dt_post_update_fields" ], 10, 3 );
-        add_filter( "dt_post_create_fields", [ $this, "dt_post_create_fields" ], 10, 2 );
-        add_action( "dt_post_created", [ $this, "dt_post_created" ], 10, 3 );
-        add_action( "dt_comment_created", [ $this, "dt_comment_created" ], 10, 4 );
+        add_action( 'post_connection_removed', [ $this, 'post_connection_removed' ], 10, 4 );
+        add_action( 'post_connection_added', [ $this, 'post_connection_added' ], 10, 4 );
+        add_filter( 'dt_post_update_fields', [ $this, 'dt_post_update_fields' ], 10, 3 );
+        add_filter( 'dt_post_create_fields', [ $this, 'dt_post_create_fields' ], 10, 2 );
+        add_action( 'dt_post_created', [ $this, 'dt_post_created' ], 10, 3 );
+        add_action( 'dt_comment_created', [ $this, 'dt_comment_created' ], 10, 4 );
 
         //list
-        add_filter( "dt_user_list_filters", [ $this, "dt_user_list_filters" ], 10, 2 );
-        add_filter( "dt_filter_access_permissions", [ $this, "dt_filter_access_permissions" ], 20, 2 );
+        add_filter( 'dt_user_list_filters', [ $this, 'dt_user_list_filters' ], 10, 2 );
+        add_filter( 'dt_filter_access_permissions', [ $this, 'dt_filter_access_permissions' ], 20, 2 );
 
     }
 
     public function after_setup_theme(){
-        $this->single_name = __( "Starter", 'disciple-tools-plugin-starter-template' );
-        $this->plural_name = __( "Starters", 'disciple-tools-plugin-starter-template' );
+        $this->single_name = __( 'Starter', 'disciple-tools-plugin-starter-template' );
+        $this->plural_name = __( 'Starters', 'disciple-tools-plugin-starter-template' );
 
         if ( class_exists( 'Disciple_Tools_Post_Type_Template' ) ) {
             new Disciple_Tools_Post_Type_Template( $this->post_type, $this->single_name, $this->plural_name );
@@ -76,8 +76,8 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
      */
     public function dt_get_post_type_settings( $settings, $post_type ){
         if ( $post_type === $this->post_type ){
-            $settings['label_singular'] = __( "Starter", 'disciple-tools-plugin-starter-template' );
-            $settings['label_plural'] = __( "Starters", 'disciple-tools-plugin-starter-template' );
+            $settings['label_singular'] = __( 'Starter', 'disciple-tools-plugin-starter-template' );
+            $settings['label_plural'] = __( 'Starters', 'disciple-tools-plugin-starter-template' );
         }
         return $settings;
     }
@@ -89,31 +89,31 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
      */
     public function dt_set_roles_and_permissions( $expected_roles ){
 
-        if ( !isset( $expected_roles["multiplier"] ) ){
-            $expected_roles["multiplier"] = [
+        if ( !isset( $expected_roles['multiplier'] ) ){
+            $expected_roles['multiplier'] = [
 
-                "label" => __( 'Multiplier', 'disciple-tools-plugin-starter-template' ),
-                "description" => "Interacts with Contacts and Groups",
-                "permissions" => []
+                'label' => __( 'Multiplier', 'disciple-tools-plugin-starter-template' ),
+                'description' => 'Interacts with Contacts and Groups',
+                'permissions' => []
             ];
         }
 
         // if the user can access contact they also can access this post type
         foreach ( $expected_roles as $role => $role_value ){
-            if ( isset( $expected_roles[$role]["permissions"]['access_contacts'] ) && $expected_roles[$role]["permissions"]['access_contacts'] ){
-                $expected_roles[$role]["permissions"]['access_' . $this->post_type ] = true;
-                $expected_roles[$role]["permissions"]['create_' . $this->post_type] = true;
-                $expected_roles[$role]["permissions"]['update_' . $this->post_type] = true;
+            if ( isset( $expected_roles[$role]['permissions']['access_contacts'] ) && $expected_roles[$role]['permissions']['access_contacts'] ){
+                $expected_roles[$role]['permissions']['access_' . $this->post_type ] = true;
+                $expected_roles[$role]['permissions']['create_' . $this->post_type] = true;
+                $expected_roles[$role]['permissions']['update_' . $this->post_type] = true;
             }
         }
 
-        if ( isset( $expected_roles["administrator"] ) ){
-            $expected_roles["administrator"]["permissions"]['view_any_'.$this->post_type ] = true;
-            $expected_roles["administrator"]["permissions"]['update_any_'.$this->post_type ] = true;
+        if ( isset( $expected_roles['administrator'] ) ){
+            $expected_roles['administrator']['permissions']['view_any_'.$this->post_type ] = true;
+            $expected_roles['administrator']['permissions']['update_any_'.$this->post_type ] = true;
         }
-        if ( isset( $expected_roles["dt_admin"] ) ){
-            $expected_roles["dt_admin"]["permissions"]['view_any_'.$this->post_type ] = true;
-            $expected_roles["dt_admin"]["permissions"]['update_any_'.$this->post_type ] = true;
+        if ( isset( $expected_roles['dt_admin'] ) ){
+            $expected_roles['dt_admin']['permissions']['view_any_'.$this->post_type ] = true;
+            $expected_roles['dt_admin']['permissions']['update_any_'.$this->post_type ] = true;
         }
 
         return $expected_roles;
@@ -141,27 +141,27 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
                     'inactive' => [
                         'label' => __( 'Inactive', 'disciple-tools-plugin-starter-template' ),
                         'description' => __( 'No longer active.', 'disciple-tools-plugin-starter-template' ),
-                        'color' => "#F43636"
+                        'color' => '#F43636'
                     ],
                     'active'   => [
                         'label' => __( 'Active', 'disciple-tools-plugin-starter-template' ),
                         'description' => __( 'Is active.', 'disciple-tools-plugin-starter-template' ),
-                        'color' => "#4CAF50"
+                        'color' => '#4CAF50'
                     ],
                 ],
                 'tile'     => 'status',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/status.svg',
-                "default_color" => "#366184",
-                "show_in_table" => 10,
+                'default_color' => '#366184',
+                'show_in_table' => 10,
             ];
             $fields['assigned_to'] = [
                 'name'        => __( 'Assigned To', 'disciple-tools-plugin-starter-template' ),
-                'description' => __( "Select the main person who is responsible for reporting on this record.", 'disciple-tools-plugin-starter-template' ),
+                'description' => __( 'Select the main person who is responsible for reporting on this record.', 'disciple-tools-plugin-starter-template' ),
                 'type'        => 'user_select',
                 'default'     => '',
                 'tile' => 'status',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/assigned-to.svg',
-                "show_in_table" => 16,
+                'show_in_table' => 16,
             ];
 
 
@@ -185,9 +185,9 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
                 'tile' => 'details',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/date-end.svg',
             ];
-            $fields["multi_select"] = [
+            $fields['multi_select'] = [
                 'name' => __( 'Multi-Select', 'disciple-tools-plugin-starter-template' ),
-                'description' => __( "Multi Select Field", 'disciple-tools-plugin-starter-template' ),
+                'description' => __( 'Multi Select Field', 'disciple-tools-plugin-starter-template' ),
                 'type' => 'multi_select',
                 'default' => [
                     'item_1' => [
@@ -203,9 +203,9 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
                         'description' => __( 'Item 3.', 'disciple-tools-plugin-starter-template' ),
                     ],
                 ],
-                "tile" => "details",
-                "in_create_form" => true,
-                'icon' => get_template_directory_uri() . "/dt-assets/images/languages.svg?v=2",
+                'tile' => 'details',
+                'in_create_form' => true,
+                'icon' => get_template_directory_uri() . '/dt-assets/images/languages.svg?v=2',
             ];
 
 
@@ -218,35 +218,35 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
                 'description' => __( 'The general location where this contact is located.', 'disciple-tools-plugin-starter-template' ),
                 'type'        => 'location',
                 'mapbox'    => false,
-                "in_create_form" => true,
-                "tile" => "details",
-                "icon" => get_template_directory_uri() . "/dt-assets/images/location.svg",
+                'in_create_form' => true,
+                'tile' => 'details',
+                'icon' => get_template_directory_uri() . '/dt-assets/images/location.svg',
             ];
             $fields['location_grid_meta'] = [
                 'name'        => __( 'Locations', 'disciple-tools-plugin-starter-template' ), //system string does not need translation
                 'description' => __( 'The general location where this record is located.', 'disciple-tools-plugin-starter-template' ),
                 'type'        => 'location_meta',
-                "tile"      => "details",
+                'tile'      => 'details',
                 'mapbox'    => false,
                 'hidden' => true,
-                "icon" => get_template_directory_uri() . "/dt-assets/images/location.svg?v=2",
+                'icon' => get_template_directory_uri() . '/dt-assets/images/location.svg?v=2',
             ];
-            $fields["contact_address"] = [
-                "name" => __( 'Address', 'disciple-tools-plugin-starter-template' ),
-                "icon" => get_template_directory_uri() . "/dt-assets/images/house.svg",
-                "type" => "communication_channel",
-                "tile" => "details",
+            $fields['contact_address'] = [
+                'name' => __( 'Address', 'disciple-tools-plugin-starter-template' ),
+                'icon' => get_template_directory_uri() . '/dt-assets/images/house.svg',
+                'type' => 'communication_channel',
+                'tile' => 'details',
                 'mapbox'    => false,
-                "customizable" => false
+                'customizable' => false
             ];
             if ( DT_Mapbox_API::get_key() ){
-                $fields["contact_address"]["custom_display"] = true;
-                $fields["contact_address"]["mapbox"] = true;
-                unset( $fields["contact_address"]["tile"] );
-                $fields["location_grid"]["mapbox"] = true;
-                $fields["location_grid_meta"]["mapbox"] = true;
-                $fields["location_grid"]["hidden"] = true;
-                $fields["location_grid_meta"]["hidden"] = false;
+                $fields['contact_address']['custom_display'] = true;
+                $fields['contact_address']['mapbox'] = true;
+                unset( $fields['contact_address']['tile'] );
+                $fields['location_grid']['mapbox'] = true;
+                $fields['location_grid_meta']['mapbox'] = true;
+                $fields['location_grid']['hidden'] = true;
+                $fields['location_grid_meta']['hidden'] = false;
             }
             // end locations
 
@@ -254,35 +254,35 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
              * @todo this adds generational support to this post type. remove if not needed.
              * generation and peer connection fields
              */
-            $fields["parents"] = [
-                "name" => __( 'Parents', 'disciple-tools-plugin-starter-template' ),
+            $fields['parents'] = [
+                'name' => __( 'Parents', 'disciple-tools-plugin-starter-template' ),
                 'description' => '',
-                "type" => "connection",
-                "post_type" => $this->post_type,
-                "p2p_direction" => "from",
-                "p2p_key" => $this->post_type."_to_".$this->post_type,
+                'type' => 'connection',
+                'post_type' => $this->post_type,
+                'p2p_direction' => 'from',
+                'p2p_key' => $this->post_type.'_to_'.$this->post_type,
                 'tile' => 'connections',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/group-parent.svg',
                 'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-group.svg',
             ];
-            $fields["peers"] = [
-                "name" => __( 'Peers', 'disciple-tools-plugin-starter-template' ),
+            $fields['peers'] = [
+                'name' => __( 'Peers', 'disciple-tools-plugin-starter-template' ),
                 'description' => '',
-                "type" => "connection",
-                "post_type" => $this->post_type,
-                "p2p_direction" => "any",
-                "p2p_key" => $this->post_type."_to_peers",
+                'type' => 'connection',
+                'post_type' => $this->post_type,
+                'p2p_direction' => 'any',
+                'p2p_key' => $this->post_type.'_to_peers',
                 'tile' => 'connections',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/group-peer.svg',
                 'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-group.svg',
             ];
-            $fields["children"] = [
-                "name" => __( 'Children', 'disciple-tools-plugin-starter-template' ),
+            $fields['children'] = [
+                'name' => __( 'Children', 'disciple-tools-plugin-starter-template' ),
                 'description' => '',
-                "type" => "connection",
-                "post_type" => $this->post_type,
-                "p2p_direction" => "to",
-                "p2p_key" => $this->post_type."_to_".$this->post_type,
+                'type' => 'connection',
+                'post_type' => $this->post_type,
+                'p2p_direction' => 'to',
+                'p2p_key' => $this->post_type.'_to_'.$this->post_type,
                 'tile' => 'connections',
                 'icon' => get_template_directory_uri() . '/dt-assets/images/group-child.svg',
                 'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-group.svg',
@@ -293,64 +293,64 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
              * @todo this adds people groups support to this post type. remove if not needed.
              * Connections to other post types
              */
-            $fields["peoplegroups"] = [
-                "name" => __( 'People Groups', 'disciple-tools-plugin-starter-template' ),
+            $fields['peoplegroups'] = [
+                'name' => __( 'People Groups', 'disciple-tools-plugin-starter-template' ),
                 'description' => __( 'The people groups connected to this record.', 'disciple-tools-plugin-starter-template' ),
-                "type" => "connection",
-                "tile" => 'details',
-                "post_type" => "peoplegroups",
-                "p2p_direction" => "to",
-                "p2p_key" => $this->post_type."_to_peoplegroups",
-                'icon' => get_template_directory_uri() . "/dt-assets/images/people-group.svg",
+                'type' => 'connection',
+                'tile' => 'details',
+                'post_type' => 'peoplegroups',
+                'p2p_direction' => 'to',
+                'p2p_key' => $this->post_type.'_to_peoplegroups',
+                'icon' => get_template_directory_uri() . '/dt-assets/images/people-group.svg',
             ];
 
             $fields['contacts'] = [
-                "name" => __( 'Contacts', 'disciple-tools-plugin-starter-template' ),
-                "description" => '',
-                "type" => "connection",
-                "post_type" => "contacts",
-                "p2p_direction" => "to",
-                "p2p_key" => $this->post_type."_to_contacts",
-                "tile" => "status",
-                'icon' => get_template_directory_uri() . "/dt-assets/images/group-type.svg",
-                'create-icon' => get_template_directory_uri() . "/dt-assets/images/add-contact.svg",
-                "show_in_table" => 35
+                'name' => __( 'Contacts', 'disciple-tools-plugin-starter-template' ),
+                'description' => '',
+                'type' => 'connection',
+                'post_type' => 'contacts',
+                'p2p_direction' => 'to',
+                'p2p_key' => $this->post_type.'_to_contacts',
+                'tile' => 'status',
+                'icon' => get_template_directory_uri() . '/dt-assets/images/group-type.svg',
+                'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-contact.svg',
+                'show_in_table' => 35
             ];
         }
 
         /**
          * @todo this adds connection to contacts. remove if not needed.
          */
-        if ( $post_type === "contacts" ){
+        if ( $post_type === 'contacts' ){
             $fields[$this->post_type] = [
-                "name" => $this->plural_name,
-                "description" => '',
-                "type" => "connection",
-                "post_type" => $this->post_type,
-                "p2p_direction" => "from",
-                "p2p_key" => $this->post_type."_to_contacts",
-                "tile" => "other",
-                'icon' => get_template_directory_uri() . "/dt-assets/images/group-type.svg",
-                'create-icon' => get_template_directory_uri() . "/dt-assets/images/add-group.svg",
-                "show_in_table" => 35
+                'name' => $this->plural_name,
+                'description' => '',
+                'type' => 'connection',
+                'post_type' => $this->post_type,
+                'p2p_direction' => 'from',
+                'p2p_key' => $this->post_type.'_to_contacts',
+                'tile' => 'other',
+                'icon' => get_template_directory_uri() . '/dt-assets/images/group-type.svg',
+                'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-group.svg',
+                'show_in_table' => 35
             ];
         }
 
         /**
          * @todo this adds connection to groups. remove if not needed.
          */
-        if ( $post_type === "groups" ){
+        if ( $post_type === 'groups' ){
             $fields[$this->post_type] = [
-                "name" => $this->plural_name,
-                "description" => '',
-                "type" => "connection",
-                "post_type" => $this->post_type,
-                "p2p_direction" => "from",
-                "p2p_key" => $this->post_type."_to_groups",
-                "tile" => "other",
-                'icon' => get_template_directory_uri() . "/dt-assets/images/group-type.svg",
-                'create-icon' => get_template_directory_uri() . "/dt-assets/images/add-group.svg",
-                "show_in_table" => 35
+                'name' => $this->plural_name,
+                'description' => '',
+                'type' => 'connection',
+                'post_type' => $this->post_type,
+                'p2p_direction' => 'from',
+                'p2p_key' => $this->post_type.'_to_groups',
+                'tile' => 'other',
+                'icon' => get_template_directory_uri() . '/dt-assets/images/group-type.svg',
+                'create-icon' => get_template_directory_uri() . '/dt-assets/images/add-group.svg',
+                'show_in_table' => 35
             ];
         }
         return $fields;
@@ -360,10 +360,10 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
      * @todo define tiles
      * @link https://github.com/DiscipleTools/Documentation/blob/master/Theme-Core/field-and-tiles.md
      */
-    public function dt_details_additional_tiles( $tiles, $post_type = "" ){
+    public function dt_details_additional_tiles( $tiles, $post_type = '' ){
         if ( $post_type === $this->post_type ){
-            $tiles["connections"] = [ "label" => __( "Connections", 'disciple-tools-plugin-starter-template' ) ];
-            $tiles["other"] = [ "label" => __( "Other", 'disciple-tools-plugin-starter-template' ) ];
+            $tiles['connections'] = [ 'label' => __( 'Connections', 'disciple-tools-plugin-starter-template' ) ];
+            $tiles['other'] = [ 'label' => __( 'Other', 'disciple-tools-plugin-starter-template' ) ];
         }
         return $tiles;
     }
@@ -375,12 +375,12 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
      */
     public function dt_details_additional_section( $section, $post_type ){
 
-        if ( $post_type === $this->post_type && $section === "other" ) {
+        if ( $post_type === $this->post_type && $section === 'other' ) {
             $fields = DT_Posts::get_post_field_settings( $post_type );
             $post = DT_Posts::get_post( $this->post_type, get_the_ID() );
             ?>
             <div class="section-subheader">
-                <?php esc_html_e( "Custom Section Contact", 'disciple-tools-plugin-starter-template' ) ?>
+                <?php esc_html_e( 'Custom Section Contact', 'disciple-tools-plugin-starter-template' ) ?>
             </div>
             <div>
                 <p>Add information or custom fields here</p>
@@ -435,8 +435,8 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
     public function dt_post_create_fields( $fields, $post_type ){
         if ( $post_type === $this->post_type ){
             $post_fields = DT_Posts::get_post_field_settings( $post_type );
-            if ( isset( $post_fields["status"] ) && !isset( $fields["status"] ) ){
-                $fields["status"] = "active";
+            if ( isset( $post_fields['status'] ) && !isset( $fields['status'] ) ){
+                $fields['status'] = 'active';
             }
         }
         return $fields;
@@ -524,58 +524,58 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
             $status_counts = [];
             $total_my = 0;
             foreach ( $counts as $count ){
-                $total_my += $count["count"];
-                dt_increment( $status_counts[$count["status"]], $count["count"] );
-                if ( $count["status"] === "active" ){
-                    if ( isset( $count["update_needed"] ) ) {
-                        $update_needed += (int) $count["update_needed"];
+                $total_my += $count['count'];
+                dt_increment( $status_counts[$count['status']], $count['count'] );
+                if ( $count['status'] === 'active' ){
+                    if ( isset( $count['update_needed'] ) ) {
+                        $update_needed += (int) $count['update_needed'];
                     }
-                    dt_increment( $active_counts[$count["status"]], $count["count"] );
+                    dt_increment( $active_counts[$count['status']], $count['count'] );
                 }
             }
 
-            $filters["tabs"][] = [
-                "key" => "assigned_to_me",
-                "label" => __( "Assigned to me", 'disciple-tools-plugin-starter-template' ),
-                "count" => $total_my,
-                "order" => 20
+            $filters['tabs'][] = [
+                'key' => 'assigned_to_me',
+                'label' => __( 'Assigned to me', 'disciple-tools-plugin-starter-template' ),
+                'count' => $total_my,
+                'order' => 20
             ];
             // add assigned to me filters
-            $filters["filters"][] = [
+            $filters['filters'][] = [
                 'ID' => 'my_all',
                 'tab' => 'assigned_to_me',
-                'name' => __( "All", 'disciple-tools-plugin-starter-template' ),
+                'name' => __( 'All', 'disciple-tools-plugin-starter-template' ),
                 'query' => [
                     'assigned_to' => [ 'me' ],
                     'sort' => 'status'
                 ],
-                "count" => $total_my,
+                'count' => $total_my,
             ];
-            foreach ( $fields["status"]["default"] as $status_key => $status_value ) {
+            foreach ( $fields['status']['default'] as $status_key => $status_value ) {
                 if ( isset( $status_counts[$status_key] ) ){
-                    $filters["filters"][] = [
-                        "ID" => 'my_' . $status_key,
-                        "tab" => 'assigned_to_me',
-                        "name" => $status_value["label"],
-                        "query" => [
+                    $filters['filters'][] = [
+                        'ID' => 'my_' . $status_key,
+                        'tab' => 'assigned_to_me',
+                        'name' => $status_value['label'],
+                        'query' => [
                             'assigned_to' => [ 'me' ],
                             'status' => [ $status_key ],
                             'sort' => '-post_date'
                         ],
-                        "count" => $status_counts[$status_key]
+                        'count' => $status_counts[$status_key]
                     ];
-                    if ( $status_key === "active" ){
+                    if ( $status_key === 'active' ){
                         if ( $update_needed > 0 ){
-                            $filters["filters"][] = [
-                                "ID" => 'my_update_needed',
-                                "tab" => 'assigned_to_me',
-                                "name" => $fields["requires_update"]["name"],
-                                "query" => [
+                            $filters['filters'][] = [
+                                'ID' => 'my_update_needed',
+                                'tab' => 'assigned_to_me',
+                                'name' => $fields['requires_update']['name'],
+                                'query' => [
                                     'assigned_to' => [ 'me' ],
                                     'status' => [ 'active' ],
                                     'requires_update' => [ true ],
                                 ],
-                                "count" => $update_needed,
+                                'count' => $update_needed,
                                 'subfilter' => true
                             ];
                         }
@@ -590,55 +590,55 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
                 $status_counts = [];
                 $total_all = 0;
                 foreach ( $counts as $count ){
-                    $total_all += $count["count"];
-                    dt_increment( $status_counts[$count["status"]], $count["count"] );
-                    if ( $count["status"] === "active" ){
-                        if ( isset( $count["update_needed"] ) ) {
-                            $update_needed += (int) $count["update_needed"];
+                    $total_all += $count['count'];
+                    dt_increment( $status_counts[$count['status']], $count['count'] );
+                    if ( $count['status'] === 'active' ){
+                        if ( isset( $count['update_needed'] ) ) {
+                            $update_needed += (int) $count['update_needed'];
                         }
-                        dt_increment( $active_counts[$count["status"]], $count["count"] );
+                        dt_increment( $active_counts[$count['status']], $count['count'] );
                     }
                 }
-                $filters["tabs"][] = [
-                    "key" => "all",
-                    "label" => __( "All", 'disciple-tools-plugin-starter-template' ),
-                    "count" => $total_all,
-                    "order" => 10
+                $filters['tabs'][] = [
+                    'key' => 'all',
+                    'label' => __( 'All', 'disciple-tools-plugin-starter-template' ),
+                    'count' => $total_all,
+                    'order' => 10
                 ];
                 // add assigned to me filters
-                $filters["filters"][] = [
+                $filters['filters'][] = [
                     'ID' => 'all',
                     'tab' => 'all',
-                    'name' => __( "All", 'disciple-tools-plugin-starter-template' ),
+                    'name' => __( 'All', 'disciple-tools-plugin-starter-template' ),
                     'query' => [
                         'sort' => '-post_date'
                     ],
-                    "count" => $total_all
+                    'count' => $total_all
                 ];
 
-                foreach ( $fields["status"]["default"] as $status_key => $status_value ) {
+                foreach ( $fields['status']['default'] as $status_key => $status_value ) {
                     if ( isset( $status_counts[$status_key] ) ){
-                        $filters["filters"][] = [
-                            "ID" => 'all_' . $status_key,
-                            "tab" => 'all',
-                            "name" => $status_value["label"],
-                            "query" => [
+                        $filters['filters'][] = [
+                            'ID' => 'all_' . $status_key,
+                            'tab' => 'all',
+                            'name' => $status_value['label'],
+                            'query' => [
                                 'status' => [ $status_key ],
                                 'sort' => '-post_date'
                             ],
-                            "count" => $status_counts[$status_key]
+                            'count' => $status_counts[$status_key]
                         ];
-                        if ( $status_key === "active" ){
+                        if ( $status_key === 'active' ){
                             if ( $update_needed > 0 ){
-                                $filters["filters"][] = [
-                                    "ID" => 'all_update_needed',
-                                    "tab" => 'all',
-                                    "name" => $fields["requires_update"]["name"],
-                                    "query" => [
+                                $filters['filters'][] = [
+                                    'ID' => 'all_update_needed',
+                                    'tab' => 'all',
+                                    'name' => $fields['requires_update']['name'],
+                                    'query' => [
                                         'status' => [ 'active' ],
                                         'requires_update' => [ true ],
                                     ],
-                                    "count" => $update_needed,
+                                    'count' => $update_needed,
                                     'subfilter' => true
                                 ];
                             }
@@ -678,7 +678,7 @@ class Disciple_Tools_Plugin_Starter_Template_Base extends DT_Module_Base {
     // scripts
     public function scripts(){
         if ( is_singular( $this->post_type ) && get_the_ID() && DT_Posts::can_view( $this->post_type, get_the_ID() ) ){
-            $test = "";
+            $test = '';
             // @todo add enqueue scripts
         }
     }

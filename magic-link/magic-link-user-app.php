@@ -9,7 +9,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_User_App extends DT_Magic_Url
 
     public $page_title = 'Starter - Magic Links - User App';
     public $page_description = 'User App - Magic Links.';
-    public $root = "starter_magic_app"; // @todo define the root of the url {yoursite}/root/type/key/action
+    public $root = 'starter_magic_app'; // @todo define the root of the url {yoursite}/root/type/key/action
     public $type = 'starter_user_app'; // @todo define the type
     public $post_type = 'user';
     private $meta_key = '';
@@ -284,7 +284,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_User_App extends DT_Magic_Url
         register_rest_route(
             $namespace, '/'.$this->type, [
                 [
-                    'methods'  => "GET",
+                    'methods'  => 'GET',
                     'callback' => [ $this, 'endpoint_get' ],
                     'permission_callback' => function( WP_REST_Request $request ){
                         $magic = new DT_Magic_URL( $this->root );
@@ -297,7 +297,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_User_App extends DT_Magic_Url
         register_rest_route(
             $namespace, '/'.$this->type, [
                 [
-                    'methods'  => "POST",
+                    'methods'  => 'POST',
                     'callback' => [ $this, 'update_record' ],
                     'permission_callback' => function( WP_REST_Request $request ){
                         $magic = new DT_Magic_URL( $this->root );
@@ -313,26 +313,26 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_User_App extends DT_Magic_Url
         $params = $request->get_params();
         $params = dt_recursive_sanitize_array( $params );
 
-        $post_id = $params["parts"]["post_id"]; //has been verified in verify_rest_endpoint_permissions_on_post()
+        $post_id = $params['parts']['post_id']; //has been verified in verify_rest_endpoint_permissions_on_post()
 
         $args = [];
         if ( !is_user_logged_in() ){
-            $args["comment_author"] = "Magic Link Submission";
+            $args['comment_author'] = 'Magic Link Submission';
             wp_set_current_user( 0 );
             $current_user = wp_get_current_user();
-            $current_user->add_cap( "magic_link" );
-            $current_user->display_name = "Magic Link Submission";
+            $current_user->add_cap( 'magic_link' );
+            $current_user->display_name = 'Magic Link Submission';
         }
 
-        if ( isset( $params["update"]["comment"] ) && !empty( $params["update"]["comment"] ) ){
-            $update = DT_Posts::add_post_comment( $this->post_type, $post_id, $params["update"]["comment"], "comment", $args, false );
+        if ( isset( $params['update']['comment'] ) && !empty( $params['update']['comment'] ) ){
+            $update = DT_Posts::add_post_comment( $this->post_type, $post_id, $params['update']['comment'], 'comment', $args, false );
             if ( is_wp_error( $update ) ){
                 return $update;
             }
         }
 
-        if ( isset( $params["update"]["start_date"] ) && !empty( $params["update"]["start_date"] ) ){
-            $update = DT_Posts::update_post( $this->post_type, $post_id, [ "start_date" => $params["update"]["start_date"] ], false, false );
+        if ( isset( $params['update']['start_date'] ) && !empty( $params['update']['start_date'] ) ){
+            $update = DT_Posts::update_post( $this->post_type, $post_id, [ 'start_date' => $params['update']['start_date'] ], false, false );
             if ( is_wp_error( $update ) ){
                 return $update;
             }
@@ -344,7 +344,7 @@ class Disciple_Tools_Plugin_Starter_Template_Magic_User_App extends DT_Magic_Url
     public function endpoint_get( WP_REST_Request $request ) {
         $params = $request->get_params();
         if ( ! isset( $params['parts'], $params['action'] ) ) {
-            return new WP_Error( __METHOD__, "Missing parameters", [ 'status' => 400 ] );
+            return new WP_Error( __METHOD__, 'Missing parameters', [ 'status' => 400 ] );
         }
 
         $data = [];

@@ -12,9 +12,9 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
     } // End instance()
 
     public function __construct(){
-        add_filter( 'dt_details_additional_tiles', [ $this, "dt_details_additional_tiles" ], 10, 2 );
-        add_filter( "dt_custom_fields_settings", [ $this, "dt_custom_fields" ], 1, 2 );
-        add_action( "dt_details_additional_section", [ $this, "dt_add_section" ], 30, 2 );
+        add_filter( 'dt_details_additional_tiles', [ $this, 'dt_details_additional_tiles' ], 10, 2 );
+        add_filter( 'dt_custom_fields_settings', [ $this, 'dt_custom_fields' ], 1, 2 );
+        add_action( 'dt_details_additional_section', [ $this, 'dt_add_section' ], 30, 2 );
     }
 
     /**
@@ -27,10 +27,10 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
      * @param string $post_type
      * @return mixed
      */
-    public function dt_details_additional_tiles( $tiles, $post_type = "" ) {
-        if ( $post_type === "contacts" || $post_type === "starter_post_type" ){
-            $tiles["disciple_tools_plugin_starter_template"] = [ "label" => __( "Plugin Starter Template", 'disciple-tools-plugin-starter-template' ) ];
-            $tiles["a_beautiful_tile"] = [ "label" => __( "A Beautiful Tile", 'disciple-tools-plugin-starter-template' ) ];
+    public function dt_details_additional_tiles( $tiles, $post_type = '' ) {
+        if ( $post_type === 'contacts' || $post_type === 'starter_post_type' ){
+            $tiles['disciple_tools_plugin_starter_template'] = [ 'label' => __( 'Plugin Starter Template', 'disciple-tools-plugin-starter-template' ) ];
+            $tiles['a_beautiful_tile'] = [ 'label' => __( 'A Beautiful Tile', 'disciple-tools-plugin-starter-template' ) ];
         }
         return $tiles;
     }
@@ -40,11 +40,11 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
      * @param string $post_type
      * @return array
      */
-    public function dt_custom_fields( array $fields, string $post_type = "" ) {
+    public function dt_custom_fields( array $fields, string $post_type = '' ) {
         /**
          * @todo set the post type
          */
-        if ( $post_type === "contacts" || $post_type === "starter_post_type" ){
+        if ( $post_type === 'contacts' || $post_type === 'starter_post_type' ){
             /**
              * @todo Add the fields that you want to include in your tile.
              *
@@ -70,46 +70,46 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
             /**
              * This is an example of a multiselect field
              */
-            $fields["disciple_tools_plugin_starter_template_multiselect"] = [
-                "name" => __( 'Multiselect', 'disciple-tools-plugin-starter-template' ),
-                "default" => [
-                    "one" => [ "label" => __( "One", 'disciple-tools-plugin-starter-template' ) ],
-                    "two" => [ "label" => __( "Two", 'disciple-tools-plugin-starter-template' ) ],
-                    "three" => [ "label" => __( "Three", 'disciple-tools-plugin-starter-template' ) ],
-                    "four" => [ "label" => __( "Four", 'disciple-tools-plugin-starter-template' ) ],
+            $fields['disciple_tools_plugin_starter_template_multiselect'] = [
+                'name' => __( 'Multiselect', 'disciple-tools-plugin-starter-template' ),
+                'default' => [
+                    'one' => [ 'label' => __( 'One', 'disciple-tools-plugin-starter-template' ) ],
+                    'two' => [ 'label' => __( 'Two', 'disciple-tools-plugin-starter-template' ) ],
+                    'three' => [ 'label' => __( 'Three', 'disciple-tools-plugin-starter-template' ) ],
+                    'four' => [ 'label' => __( 'Four', 'disciple-tools-plugin-starter-template' ) ],
                 ],
-                "tile" => "disciple_tools_plugin_starter_template",
-                "type" => "multi_select",
-                "hidden" => false,
+                'tile' => 'disciple_tools_plugin_starter_template',
+                'type' => 'multi_select',
+                'hidden' => false,
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
             ];
             /**
              * This is an example of a key select field
              */
-            $fields["disciple_tools_plugin_starter_template_keyselect"] = [
-                'name' => "Key Select",
+            $fields['disciple_tools_plugin_starter_template_keyselect'] = [
+                'name' => 'Key Select',
                 'type' => 'key_select',
-                "tile" => "disciple_tools_plugin_starter_template",
+                'tile' => 'disciple_tools_plugin_starter_template',
                 'default' => [
                     'first'   => [
-                        "label" => _x( 'First', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
-                        "description" => _x( "First Key Description", "Training Status field description", 'disciple-tools-plugin-starter-template' ),
-                        'color' => "#ff9800"
+                        'label' => _x( 'First', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
+                        'description' => _x( 'First Key Description', 'Training Status field description', 'disciple-tools-plugin-starter-template' ),
+                        'color' => '#ff9800'
                     ],
                     'second'   => [
-                        "label" => _x( 'Second', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
-                        "description" => _x( "Second Key Description", "Training Status field description", 'disciple-tools-plugin-starter-template' ),
-                        'color' => "#4CAF50"
+                        'label' => _x( 'Second', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
+                        'description' => _x( 'Second Key Description', 'Training Status field description', 'disciple-tools-plugin-starter-template' ),
+                        'color' => '#4CAF50'
                     ],
                     'third'   => [
-                        "label" => _x( 'Third', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
-                        "description" => _x( "Third Key Description", "Training Status field description", 'disciple-tools-plugin-starter-template' ),
-                        'color' => "#366184"
+                        'label' => _x( 'Third', 'Key Select Label', 'disciple-tools-plugin-starter-template' ),
+                        'description' => _x( 'Third Key Description', 'Training Status field description', 'disciple-tools-plugin-starter-template' ),
+                        'color' => '#366184'
                     ],
                 ],
                 'icon' => get_template_directory_uri() . '/dt-assets/images/edit.svg',
-                "default_color" => "#366184",
-                "select_cannot_be_empty" => true
+                'default_color' => '#366184',
+                'select_cannot_be_empty' => true
             ];
 
             //test fields
@@ -118,7 +118,7 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
                 'type'        => 'number',
                 'default'     => 0,
                 'tile'        => 'a_beautiful_tile',
-                'min_option'  => "5",
+                'min_option'  => '5',
             ];
             $fields['number_test_private'] = [
                 'name'        => __( 'Number field private', 'disciple-tools-plugin-starter-template' ),
@@ -126,7 +126,7 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
                 'default'     => 0,
                 'tile'        => 'a_beautiful_tile',
                 'private'     => true,
-                'max_option'  => "200",
+                'max_option'  => '200',
             ];
             $fields['text_test'] = [
                 'name'        => __( 'Text', 'disciple-tools-plugin-starter-template' ),
@@ -158,8 +158,8 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
                 'type'        => 'array',
                 'tile'        => 'a_beautiful_tile'
             ];
-            $fields["location_test"] = [
-                'name' => "location field",
+            $fields['location_test'] = [
+                'name' => 'location field',
                 'type' => 'location',
                 'tile' => 'a_beautiful_tile'
             ];
@@ -189,67 +189,67 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
                 'default'     => false,
                 'private'   => true
             ];
-            $fields["multi_select_test"] = [
-                'name' => "Random Options",
-                'type' => "multi_select",
-                "default" => [
-                    "one" => [ "label" => "option 1" ],
-                    "two" => [ "label" => "option 2" ],
-                    "three" => [ "label" => "option 3" ],
+            $fields['multi_select_test'] = [
+                'name' => 'Random Options',
+                'type' => 'multi_select',
+                'default' => [
+                    'one' => [ 'label' => 'option 1' ],
+                    'two' => [ 'label' => 'option 2' ],
+                    'three' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
             ];
-            $fields["multi_select_test_private"] = [
-                'name' => "Random Options",
-                'type' => "multi_select",
-                "default" => [
-                    "one_private" => [ "label" => "option 1" ],
-                    "two_private" => [ "label" => "option 2" ],
-                    "three_private" => [ "label" => "option 3" ],
+            $fields['multi_select_test_private'] = [
+                'name' => 'Random Options',
+                'type' => 'multi_select',
+                'default' => [
+                    'one_private' => [ 'label' => 'option 1' ],
+                    'two_private' => [ 'label' => 'option 2' ],
+                    'three_private' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
                 'private'   => true
             ];
-            $fields["key_select_test"] = [
-                'name' => "Random Options",
-                'type' => "key_select",
-                "default" => [
-                    "one" => [ "label" => "option 1" ],
-                    "two" => [ "label" => "option 2" ],
-                    "three" => [ "label" => "option 3" ],
+            $fields['key_select_test'] = [
+                'name' => 'Random Options',
+                'type' => 'key_select',
+                'default' => [
+                    'one' => [ 'label' => 'option 1' ],
+                    'two' => [ 'label' => 'option 2' ],
+                    'three' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
             ];
-            $fields["key_select_test_private"] = [
-                'name' => "Random Options",
-                'type' => "key_select",
-                "default" => [
-                    "one_private" => [ "label" => "option 1" ],
-                    "two_private" => [ "label" => "option 2" ],
-                    "three_private" => [ "label" => "option 3" ],
+            $fields['key_select_test_private'] = [
+                'name' => 'Random Options',
+                'type' => 'key_select',
+                'default' => [
+                    'one_private' => [ 'label' => 'option 1' ],
+                    'two_private' => [ 'label' => 'option 2' ],
+                    'three_private' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
                 'private'   => true
             ];
-            $fields["tags_test"] = [
-                'name' => "Random Tags",
-                'type' => "tags",
-                "default" => [
-                    "one" => [ "label" => "option 1" ],
-                    "two" => [ "label" => "option 2" ],
-                    "three" => [ "label" => "option 3" ],
+            $fields['tags_test'] = [
+                'name' => 'Random Tags',
+                'type' => 'tags',
+                'default' => [
+                    'one' => [ 'label' => 'option 1' ],
+                    'two' => [ 'label' => 'option 2' ],
+                    'three' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
             ];
-            $fields["tags_test_private"] = [
-                'name' => "Random Tags Private",
-                'type' => "tags",
-                "default" => [
-                    "one" => [ "label" => "option 1" ],
-                    "two" => [ "label" => "option 2" ],
-                    "three" => [ "label" => "option 3" ],
+            $fields['tags_test_private'] = [
+                'name' => 'Random Tags Private',
+                'type' => 'tags',
+                'default' => [
+                    'one' => [ 'label' => 'option 1' ],
+                    'two' => [ 'label' => 'option 2' ],
+                    'three' => [ 'label' => 'option 3' ],
                 ],
-                "tile" => "a_beautiful_tile",
+                'tile' => 'a_beautiful_tile',
                 'private'   => true
             ];
         }
@@ -260,7 +260,7 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
         /**
          * @todo set the post type and the section key that you created in the dt_details_additional_tiles() function
          */
-        if ( ( $post_type === "contacts" || $post_type === "starter_post_type" ) && $section === "disciple_tools_plugin_starter_template" ){
+        if ( ( $post_type === 'contacts' || $post_type === 'starter_post_type' ) && $section === 'disciple_tools_plugin_starter_template' ){
             /**
              * These are two sets of key data:
              * $this_post is the details for this specific post
@@ -279,7 +279,7 @@ class Disciple_Tools_Plugin_Starter_Template_Tile
             <div class="cell small-12 medium-4">
                 <!-- @todo remove this notes section-->
                 <strong>You can do a number of customizations here.</strong><br><br>
-                See post types and field keys and values: <a href="<?php echo esc_html( admin_url( "admin.php?page=dt_utilities&tab=fields" ) ); ?>" target="_blank">click here</a>
+                See post types and field keys and values: <a href="<?php echo esc_html( admin_url( 'admin.php?page=dt_utilities&tab=fields' ) ); ?>" target="_blank">click here</a>
             </div>
 
         <?php }

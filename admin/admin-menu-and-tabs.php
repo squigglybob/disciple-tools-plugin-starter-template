@@ -35,9 +35,9 @@ class Disciple_Tools_Plugin_Starter_Template_Menu {
      */
     public function __construct() {
 
-        add_action( "admin_menu", array( $this, "register_menu" ) );
+        add_action( 'admin_menu', array( $this, 'register_menu' ) );
 
-        $this->page_title = __( "Plugin Starter Template", 'disciple-tools-plugin-starter-template' );
+        $this->page_title = __( 'Plugin Starter Template', 'disciple-tools-plugin-starter-template' );
     } // End __construct()
 
 
@@ -46,7 +46,7 @@ class Disciple_Tools_Plugin_Starter_Template_Menu {
      * @since 0.1
      */
     public function register_menu() {
-        $this->page_title = __( "Plugin Starter Template", 'disciple-tools-plugin-starter-template' );
+        $this->page_title = __( 'Plugin Starter Template', 'disciple-tools-plugin-starter-template' );
 
         add_submenu_page( 'dt_extensions', $this->page_title, $this->page_title, 'manage_dt', $this->token, [ $this, 'content' ] );
     }
@@ -66,8 +66,8 @@ class Disciple_Tools_Plugin_Starter_Template_Menu {
             wp_die( 'You do not have sufficient permissions to access this page.' );
         }
 
-        if ( isset( $_GET["tab"] ) ) {
-            $tab = sanitize_key( wp_unslash( $_GET["tab"] ) );
+        if ( isset( $_GET['tab'] ) ) {
+            $tab = sanitize_key( wp_unslash( $_GET['tab'] ) );
         } else {
             $tab = 'general';
         }
@@ -85,11 +85,11 @@ class Disciple_Tools_Plugin_Starter_Template_Menu {
 
             <?php
             switch ( $tab ) {
-                case "general":
+                case 'general':
                     $object = new Disciple_Tools_Plugin_Starter_Template_Tab_General();
                     $object->content();
                     break;
-                case "second":
+                case 'second':
                     $object = new Disciple_Tools_Plugin_Starter_Template_Tab_Second();
                     $object->content();
                     break;
