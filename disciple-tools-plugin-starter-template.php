@@ -69,7 +69,7 @@ add_action( 'after_setup_theme', 'disciple_tools_plugin_starter_template', 20 );
 //register the D.T Plugin
 add_filter( 'dt_plugins', function ( $plugins ){
     $plugin_data = get_file_data( __FILE__, [ 'Version' => 'Version', 'Plugin Name' => 'Plugin Name' ], false );
-    $plugins['disciple-tools-prayer-campaigns'] = [
+    $plugins['disciple-tools-plugin-starter-template'] = [
         'plugin_url' => trailingslashit( plugin_dir_url( __FILE__ ) ),
         'version' => $plugin_data['Version'] ?? null,
         'name' => $plugin_data['Plugin Name'] ?? null,
