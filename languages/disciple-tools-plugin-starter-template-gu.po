@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "POT-Creation-Date: 2021-08-03 12:04-0400\n"
-"PO-Revision-Date: 2018-01-29 05:53-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-09-23 14:02+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Gujarati <https://translate.disciple.tools/projects/"
+"disciple-tools/disciple-tools-plugin-starter-template/gu/>\n"
 "Language: gu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Weblate 4.14.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
@@ -69,7 +70,7 @@ msgstr ""
 
 #: post-type/module-base.php:157
 msgid "Status"
-msgstr ""
+msgstr "સ્થિતિ"
 
 #: post-type/module-base.php:158
 msgctxt "field description"
@@ -190,7 +191,7 @@ msgstr ""
 #: post-type/module-base.php:716
 msgctxt "List Filters"
 msgid "All"
-msgstr ""
+msgstr "બધા"
 
 #: site-link/custom-site-to-site-links.php:36 tile/custom-tile.php:32
 msgid "Plugin Starter Template"
