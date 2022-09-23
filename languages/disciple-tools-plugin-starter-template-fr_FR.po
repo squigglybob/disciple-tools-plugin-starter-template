@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "POT-Creation-Date: 2021-08-03 12:04-0400\n"
-"PO-Revision-Date: 2022-09-23 14:01+0000\n"
+"PO-Revision-Date: 2022-09-23 14:02+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: French <https://translate.disciple.tools/projects/"
 "disciple-tools/disciple-tools-plugin-starter-template/fr/>\n"
@@ -45,7 +45,6 @@ msgid "Tags"
 msgstr "Étiquettes"
 
 #: post-type/module-base.php:117
-#, fuzzy
 msgctxt "Optional Documentation"
 msgid "A useful way to group related items."
 msgstr "Un moyen utile de regrouper les éléments liés."
@@ -168,12 +167,12 @@ msgstr "Sélectionner"
 
 #: post-type/module-base.php:469
 msgid "To add new members, click on 'Create' or 'Select'."
-msgstr ""
+msgstr "Pour ajouter des membres cliquez sur 'Créer' ou 'Sélectioner'"
 
 #: post-type/module-base.php:475
 msgctxt "Add members modal"
 msgid "Add members from existing contacts"
-msgstr ""
+msgstr "Ajouter des membres à partir de contacts existants"
 
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
@@ -181,21 +180,23 @@ msgid ""
 "In the 'Member List' field, type the name of an existing contact to add them "
 "to this group."
 msgstr ""
+"Dans le champ «Liste des membres», saisissez le nom d'un contact existant "
+"pour les ajouter à ce groupe."
 
 #: post-type/module-base.php:485
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #: post-type/module-base.php:643
 msgctxt "List Filters"
 msgid "Assigned to me"
-msgstr ""
+msgstr "Assigné à moi"
 
 #: post-type/module-base.php:651 post-type/module-base.php:708
 #: post-type/module-base.php:716
 msgctxt "List Filters"
 msgid "All"
-msgstr ""
+msgstr "Tout"
 
 #: site-link/custom-site-to-site-links.php:36 tile/custom-tile.php:32
 msgid "Plugin Starter Template"
@@ -216,24 +217,24 @@ msgstr ""
 
 #: tile/custom-tile.php:75
 msgid "One"
-msgstr ""
+msgstr "Un"
 
 #: tile/custom-tile.php:76
 msgid "Two"
-msgstr ""
+msgstr "Deux"
 
 #: tile/custom-tile.php:77
 msgid "Three"
-msgstr ""
+msgstr "Trois"
 
 #: tile/custom-tile.php:78
 msgid "Four"
-msgstr ""
+msgstr "Quatre"
 
 #: tile/custom-tile.php:94
 msgctxt "Training Status label"
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
 #: tile/custom-tile.php:95
 msgctxt "Training Status field description"
@@ -283,7 +284,7 @@ msgstr ""
 #: tile/custom-tile.php:119
 msgctxt "Training Status label"
 msgid "Paused"
-msgstr ""
+msgstr "En pause"
 
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
@@ -332,4 +333,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://github.com/DiscipleTools"
-msgstr ""
+msgstr "https://github.com/DiscipleTools"
