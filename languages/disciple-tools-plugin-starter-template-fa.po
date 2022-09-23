@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "POT-Creation-Date: 2021-08-03 12:04-0400\n"
-"PO-Revision-Date: 2018-01-29 05:53-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-09-23 14:02+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Persian <https://translate.disciple.tools/projects/"
+"disciple-tools/disciple-tools-plugin-starter-template/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Weblate 4.14.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
@@ -36,40 +37,41 @@ msgstr ""
 
 #: post-type/module-base.php:77
 msgid "Multiplier"
-msgstr ""
+msgstr "مبشر"
 
 #: post-type/module-base.php:116
 msgid "Tags"
-msgstr ""
+msgstr "برچسب‌ها"
 
 #: post-type/module-base.php:117
 msgctxt "Optional Documentation"
 msgid "A useful way to group related items."
-msgstr ""
+msgstr "روشی مفید برای گروه‌بندی موارد مرتبط."
 
 #: post-type/module-base.php:123
 msgid "Follow"
-msgstr ""
+msgstr "پیگیری کردن"
 
 #: post-type/module-base.php:130
 msgid "Un-Follow"
-msgstr ""
+msgstr "لغو پیگیری"
 
 #: post-type/module-base.php:136
 msgid "Tasks"
-msgstr ""
+msgstr "یادآوری‌ها"
 
 #: post-type/module-base.php:140
 msgid "Assigned To"
-msgstr ""
+msgstr "اختصاص داده شده به"
 
 #: post-type/module-base.php:141
 msgid "Select the main person who is responsible for reporting on this record."
 msgstr ""
+"شخصی را که مسئولیت گزارش دادن در مورد این گروه را بر عهده دارد، انتخاب کنید."
 
 #: post-type/module-base.php:157
 msgid "Status"
-msgstr ""
+msgstr "وضعیت"
 
 #: post-type/module-base.php:158
 msgctxt "field description"
@@ -78,7 +80,7 @@ msgstr ""
 
 #: post-type/module-base.php:162
 msgid "Inactive"
-msgstr ""
+msgstr "غیرفعال"
 
 #: post-type/module-base.php:163
 msgctxt "field description"
@@ -87,7 +89,7 @@ msgstr ""
 
 #: post-type/module-base.php:167
 msgid "Active"
-msgstr ""
+msgstr "فعال"
 
 #: post-type/module-base.php:168
 msgctxt "field description"
@@ -96,24 +98,24 @@ msgstr ""
 
 #: post-type/module-base.php:184
 msgid "Start Date"
-msgstr ""
+msgstr "تاریخ شروع"
 
 #: post-type/module-base.php:192
 msgid "End Date"
-msgstr ""
+msgstr "تاریخ پایان"
 
 #: post-type/module-base.php:206 post-type/module-base.php:215
 msgid "Locations"
-msgstr ""
+msgstr "مکان‌ها"
 
 #: post-type/module-base.php:207 post-type/module-base.php:216
 msgctxt "Optional Documentation"
 msgid "The general location where this contact is located."
-msgstr ""
+msgstr "مکان عمومی‌ای که این مخاطب در آن قرار دارد."
 
 #: post-type/module-base.php:223
 msgid "Address"
-msgstr ""
+msgstr "نشانی"
 
 #: post-type/module-base.php:246
 msgid "Parents"
@@ -129,7 +131,7 @@ msgstr ""
 
 #: post-type/module-base.php:285
 msgid "People Groups"
-msgstr ""
+msgstr "قومیت‌ها"
 
 #: post-type/module-base.php:286
 msgctxt "Optional Documentation"
@@ -138,37 +140,37 @@ msgstr ""
 
 #: post-type/module-base.php:395
 msgid "Connections"
-msgstr ""
+msgstr "‫اتصالات"
 
 #: post-type/module-base.php:396
 msgid "Other"
-msgstr ""
+msgstr "دیگر"
 
 #: post-type/module-base.php:431
 msgctxt "input field placeholder"
 msgid "Search Users"
-msgstr ""
+msgstr "جستجوی کاربران"
 
 #: post-type/module-base.php:456
 msgid "Member List"
-msgstr ""
+msgstr "لیست اعضا"
 
 #: post-type/module-base.php:459
 msgid "Create"
-msgstr ""
+msgstr "ایجاد"
 
 #: post-type/module-base.php:464
 msgid "Select"
-msgstr ""
+msgstr "انتخاب"
 
 #: post-type/module-base.php:469
 msgid "To add new members, click on 'Create' or 'Select'."
-msgstr ""
+msgstr "برای اضافه کردن اعضا، روی «ایجاد» یا «انتخاب» کلیک کنید."
 
 #: post-type/module-base.php:475
 msgctxt "Add members modal"
 msgid "Add members from existing contacts"
-msgstr ""
+msgstr "اعضا را از مخاطبین موجود اضافه کنید"
 
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
@@ -176,21 +178,23 @@ msgid ""
 "In the 'Member List' field, type the name of an existing contact to add them to this "
 "group."
 msgstr ""
+"در قسمت «لیست اعضا» نام مخاطبین موجود در سایت را برای اضافه به این گروه، "
+"تایپ کنید."
 
 #: post-type/module-base.php:485
 msgid "Close"
-msgstr ""
+msgstr "بستن"
 
 #: post-type/module-base.php:643
 msgctxt "List Filters"
 msgid "Assigned to me"
-msgstr ""
+msgstr "اختصاص‌داده‌شده به من"
 
 #: post-type/module-base.php:651 post-type/module-base.php:708
 #: post-type/module-base.php:716
 msgctxt "List Filters"
 msgid "All"
-msgstr ""
+msgstr "همه"
 
 #: site-link/custom-site-to-site-links.php:36 tile/custom-tile.php:32
 msgid "Plugin Starter Template"
@@ -228,7 +232,7 @@ msgstr ""
 #: tile/custom-tile.php:94
 msgctxt "Training Status label"
 msgid "New"
-msgstr ""
+msgstr "جدید"
 
 #: tile/custom-tile.php:95
 msgctxt "Training Status field description"
@@ -278,7 +282,7 @@ msgstr ""
 #: tile/custom-tile.php:119
 msgctxt "Training Status label"
 msgid "Paused"
-msgstr ""
+msgstr "پیگیری متوقف شده است"
 
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
@@ -327,4 +331,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://github.com/DiscipleTools"
-msgstr ""
+msgstr "https://github.com/DiscipleTools"
