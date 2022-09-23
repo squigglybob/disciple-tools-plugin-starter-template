@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "POT-Creation-Date: 2021-08-03 12:04-0400\n"
-"PO-Revision-Date: 2022-09-23 14:02+0000\n"
+"PO-Revision-Date: 2022-09-23 14:09+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: French <https://translate.disciple.tools/projects/"
-"disciple-tools/disciple-tools-plugin-starter-template/fr/>\n"
-"Language: fr_FR\n"
+"Language-Team: Hungarian <https://translate.disciple.tools/projects/"
+"disciple-tools/disciple-tools-plugin-starter-template/hu/>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.14.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -31,49 +31,46 @@ msgstr ""
 msgid "Magic Url"
 msgstr ""
 
-#: magic-link/magic-link-post-type.php:149
-#: magic-link/magic-link-user-app.php:124
+#: magic-link/magic-link-post-type.php:149 magic-link/magic-link-user-app.php:124
 msgid "Add Magic"
 msgstr ""
 
 #: post-type/module-base.php:77
 msgid "Multiplier"
-msgstr "Multiplicateur"
+msgstr "Sokszorozó"
 
 #: post-type/module-base.php:116
 msgid "Tags"
-msgstr "Étiquettes"
+msgstr ""
 
 #: post-type/module-base.php:117
 msgctxt "Optional Documentation"
 msgid "A useful way to group related items."
-msgstr "Un moyen utile de regrouper les éléments liés."
+msgstr ""
 
 #: post-type/module-base.php:123
 msgid "Follow"
-msgstr "Suivre"
+msgstr "Követni"
 
 #: post-type/module-base.php:130
 msgid "Un-Follow"
-msgstr "Ne plus suivre"
+msgstr "Követés Leállítása"
 
 #: post-type/module-base.php:136
 msgid "Tasks"
-msgstr "Tâches"
+msgstr "Feladatok"
 
 #: post-type/module-base.php:140
 msgid "Assigned To"
-msgstr "Assigné à"
+msgstr "Kiosztva"
 
 #: post-type/module-base.php:141
 msgid "Select the main person who is responsible for reporting on this record."
-msgstr ""
-"Sélectionnez la personne principale chargée de faire rapport sur ce groupe. ("
-"un utilisateur pas un contact)."
+msgstr "Válaszd ki azt a személyt, aki felelős jelentést adni a csoportról"
 
 #: post-type/module-base.php:157
 msgid "Status"
-msgstr "Statut"
+msgstr "Állapot"
 
 #: post-type/module-base.php:158
 msgctxt "field description"
@@ -82,7 +79,7 @@ msgstr ""
 
 #: post-type/module-base.php:162
 msgid "Inactive"
-msgstr "Inactif"
+msgstr "Inaktív"
 
 #: post-type/module-base.php:163
 msgctxt "field description"
@@ -91,7 +88,7 @@ msgstr ""
 
 #: post-type/module-base.php:167
 msgid "Active"
-msgstr "Actif"
+msgstr "Aktív"
 
 #: post-type/module-base.php:168
 msgctxt "field description"
@@ -100,24 +97,24 @@ msgstr ""
 
 #: post-type/module-base.php:184
 msgid "Start Date"
-msgstr "Date de début"
+msgstr "Kezdés dátuma"
 
 #: post-type/module-base.php:192
 msgid "End Date"
-msgstr "Date de fin"
+msgstr "Befejezés dátuma"
 
 #: post-type/module-base.php:206 post-type/module-base.php:215
 msgid "Locations"
-msgstr "Emplacements"
+msgstr "Helyek"
 
 #: post-type/module-base.php:207 post-type/module-base.php:216
 msgctxt "Optional Documentation"
 msgid "The general location where this contact is located."
-msgstr "L'emplacement général où se trouve ce contact."
+msgstr ""
 
 #: post-type/module-base.php:223
 msgid "Address"
-msgstr "Adresse"
+msgstr "Lakcím"
 
 #: post-type/module-base.php:246
 msgid "Parents"
@@ -133,7 +130,7 @@ msgstr ""
 
 #: post-type/module-base.php:285
 msgid "People Groups"
-msgstr "Groupes ethniques"
+msgstr "Embercsoportok"
 
 #: post-type/module-base.php:286
 msgctxt "Optional Documentation"
@@ -142,61 +139,62 @@ msgstr ""
 
 #: post-type/module-base.php:395
 msgid "Connections"
-msgstr "Liens"
+msgstr "Kapcsolat"
 
 #: post-type/module-base.php:396
 msgid "Other"
-msgstr "Autre"
+msgstr "Egyéb"
 
 #: post-type/module-base.php:431
 msgctxt "input field placeholder"
 msgid "Search Users"
-msgstr "Rechercher les utilisateurs"
+msgstr "Felhasználók Keresése"
 
 #: post-type/module-base.php:456
 msgid "Member List"
-msgstr "Liste des membres"
+msgstr "Tagok Listája"
 
 #: post-type/module-base.php:459
 msgid "Create"
-msgstr "Créer"
+msgstr "Készítés"
 
 #: post-type/module-base.php:464
 msgid "Select"
-msgstr "Sélectionner"
+msgstr "Kiválasztás"
 
 #: post-type/module-base.php:469
 msgid "To add new members, click on 'Create' or 'Select'."
-msgstr "Pour ajouter des membres cliquez sur 'Créer' ou 'Sélectioner'"
+msgstr ""
+"Új tagok hozzáadásához, klikkelj a \"létrehozás\" vagy \"választás\" opcióra"
 
 #: post-type/module-base.php:475
 msgctxt "Add members modal"
 msgid "Add members from existing contacts"
-msgstr "Ajouter des membres à partir de contacts existants"
+msgstr "Adj tagokat a létező kapcsolati személyek közül"
 
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
 msgid ""
-"In the 'Member List' field, type the name of an existing contact to add them "
-"to this group."
+"In the 'Member List' field, type the name of an existing contact to add them to this "
+"group."
 msgstr ""
-"Dans le champ «Liste des membres», saisissez le nom d'un contact existant "
-"pour les ajouter à ce groupe."
+"A tagok listája mezőbe, gépeld be a meglévő kapcsolati személy nevét, hogy "
+"hozzá add a csoporthoz"
 
 #: post-type/module-base.php:485
 msgid "Close"
-msgstr "Fermer"
+msgstr "Bezár"
 
 #: post-type/module-base.php:643
 msgctxt "List Filters"
 msgid "Assigned to me"
-msgstr "Assigné à moi"
+msgstr "Feladatom"
 
 #: post-type/module-base.php:651 post-type/module-base.php:708
 #: post-type/module-base.php:716
 msgctxt "List Filters"
 msgid "All"
-msgstr "Tout"
+msgstr "Összes"
 
 #: site-link/custom-site-to-site-links.php:36 tile/custom-tile.php:32
 msgid "Plugin Starter Template"
@@ -217,24 +215,24 @@ msgstr ""
 
 #: tile/custom-tile.php:75
 msgid "One"
-msgstr "Un"
+msgstr ""
 
 #: tile/custom-tile.php:76
 msgid "Two"
-msgstr "Deux"
+msgstr ""
 
 #: tile/custom-tile.php:77
 msgid "Three"
-msgstr "Trois"
+msgstr ""
 
 #: tile/custom-tile.php:78
 msgid "Four"
-msgstr "Quatre"
+msgstr ""
 
 #: tile/custom-tile.php:94
 msgctxt "Training Status label"
 msgid "New"
-msgstr "Nouveau"
+msgstr "Új"
 
 #: tile/custom-tile.php:95
 msgctxt "Training Status field description"
@@ -284,13 +282,13 @@ msgstr ""
 #: tile/custom-tile.php:119
 msgctxt "Training Status label"
 msgid "Paused"
-msgstr "En pause"
+msgstr "Szüneteltetve"
 
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
 msgid ""
-"This contact is currently on hold. It has potential of getting scheduled in "
-"the future."
+"This contact is currently on hold. It has potential of getting scheduled in the "
+"future."
 msgstr ""
 
 #: tile/custom-tile.php:124
