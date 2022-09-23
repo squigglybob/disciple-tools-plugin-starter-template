@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "POT-Creation-Date: 2021-08-03 12:04-0400\n"
-"PO-Revision-Date: 2018-01-29 05:53-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-09-23 15:35+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Burmese <https://translate.disciple.tools/projects/"
+"disciple-tools/disciple-tools-plugin-starter-template/my_MM/>\n"
 "Language: my_MM\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Weblate 4.14.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
@@ -49,27 +50,27 @@ msgstr ""
 
 #: post-type/module-base.php:123
 msgid "Follow"
-msgstr ""
+msgstr "နောက်လိုက်ပါ"
 
 #: post-type/module-base.php:130
 msgid "Un-Follow"
-msgstr ""
+msgstr "နောက်မလိုက်တော့ပါ"
 
 #: post-type/module-base.php:136
 msgid "Tasks"
-msgstr ""
+msgstr "လုပ်ငန်းတာဝန်များ"
 
 #: post-type/module-base.php:140
 msgid "Assigned To"
-msgstr ""
+msgstr "တာဝန်ပေးအပ်သည်"
 
 #: post-type/module-base.php:141
 msgid "Select the main person who is responsible for reporting on this record."
-msgstr ""
+msgstr "ဤအုပ်စုအပေါ်အစီရင်ခံရန်တာဝန်ရှိသည့်အဓိကပုဂ္ဂိုလ်ကိုရွေးချယ်ပါ။"
 
 #: post-type/module-base.php:157
 msgid "Status"
-msgstr ""
+msgstr "အဆင့်အတန်း"
 
 #: post-type/module-base.php:158
 msgctxt "field description"
@@ -78,7 +79,7 @@ msgstr ""
 
 #: post-type/module-base.php:162
 msgid "Inactive"
-msgstr ""
+msgstr "မလှုပ်ရှားသော"
 
 #: post-type/module-base.php:163
 msgctxt "field description"
@@ -87,7 +88,7 @@ msgstr ""
 
 #: post-type/module-base.php:167
 msgid "Active"
-msgstr ""
+msgstr "လုပ်ရှားသော"
 
 #: post-type/module-base.php:168
 msgctxt "field description"
@@ -96,15 +97,15 @@ msgstr ""
 
 #: post-type/module-base.php:184
 msgid "Start Date"
-msgstr ""
+msgstr "စတင်သည့်ရက်စွဲ"
 
 #: post-type/module-base.php:192
 msgid "End Date"
-msgstr ""
+msgstr "အဆုံးသတ်ရက်စွဲ"
 
 #: post-type/module-base.php:206 post-type/module-base.php:215
 msgid "Locations"
-msgstr ""
+msgstr "တည်နေရာများ"
 
 #: post-type/module-base.php:207 post-type/module-base.php:216
 msgctxt "Optional Documentation"
@@ -113,7 +114,7 @@ msgstr ""
 
 #: post-type/module-base.php:223
 msgid "Address"
-msgstr ""
+msgstr "လိပ်စာ"
 
 #: post-type/module-base.php:246
 msgid "Parents"
@@ -129,7 +130,7 @@ msgstr ""
 
 #: post-type/module-base.php:285
 msgid "People Groups"
-msgstr ""
+msgstr "လူအုပ်စုများ"
 
 #: post-type/module-base.php:286
 msgctxt "Optional Documentation"
@@ -138,37 +139,37 @@ msgstr ""
 
 #: post-type/module-base.php:395
 msgid "Connections"
-msgstr ""
+msgstr "ဆက်သွယ်မှု"
 
 #: post-type/module-base.php:396
 msgid "Other"
-msgstr ""
+msgstr "အခြား"
 
 #: post-type/module-base.php:431
 msgctxt "input field placeholder"
 msgid "Search Users"
-msgstr ""
+msgstr "အသုံးပြုသူများကိုရှာပါ"
 
 #: post-type/module-base.php:456
 msgid "Member List"
-msgstr ""
+msgstr "အသင်းဝင်စာရင်း"
 
 #: post-type/module-base.php:459
 msgid "Create"
-msgstr ""
+msgstr "ဖန်တီးပါ"
 
 #: post-type/module-base.php:464
 msgid "Select"
-msgstr ""
+msgstr "ရွေးချယ်ပါ"
 
 #: post-type/module-base.php:469
 msgid "To add new members, click on 'Create' or 'Select'."
-msgstr ""
+msgstr "အသင်း၀င်သစ်များကိုထည့်သွင်းရန် 'Create' သို့မဟုတ် 'Select' ကိုနှိပ်ပါ။"
 
 #: post-type/module-base.php:475
 msgctxt "Add members modal"
 msgid "Add members from existing contacts"
-msgstr ""
+msgstr "ရှိပြီးသားအဆက်အသွယ်များမှအဖွဲ့ဝင်များထည့်ပါ။"
 
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
@@ -176,21 +177,23 @@ msgid ""
 "In the 'Member List' field, type the name of an existing contact to add them to this "
 "group."
 msgstr ""
+"'အသင်းဝင်စာရင်း' "
+"အကွက်ထဲ၊ဤအုပ်စုထဲသို့ထည့်ရန်ရှိပြီးသားအဆက်အသွယ်၏အမည်ကိုရိုက်ပါ။"
 
 #: post-type/module-base.php:485
 msgid "Close"
-msgstr ""
+msgstr "ပိတ်သည်"
 
 #: post-type/module-base.php:643
 msgctxt "List Filters"
 msgid "Assigned to me"
-msgstr ""
+msgstr "ကျွနုပ်ကိုတာဝန်ပေးအပ်သည်"
 
 #: post-type/module-base.php:651 post-type/module-base.php:708
 #: post-type/module-base.php:716
 msgctxt "List Filters"
 msgid "All"
-msgstr ""
+msgstr "အားလုံး"
 
 #: site-link/custom-site-to-site-links.php:36 tile/custom-tile.php:32
 msgid "Plugin Starter Template"
@@ -228,7 +231,7 @@ msgstr ""
 #: tile/custom-tile.php:94
 msgctxt "Training Status label"
 msgid "New"
-msgstr ""
+msgstr "အသစ်"
 
 #: tile/custom-tile.php:95
 msgctxt "Training Status field description"
@@ -278,7 +281,7 @@ msgstr ""
 #: tile/custom-tile.php:119
 msgctxt "Training Status label"
 msgid "Paused"
-msgstr ""
+msgstr "ဆိုင်းငံ့မှု"
 
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
@@ -327,4 +330,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://github.com/DiscipleTools"
-msgstr ""
+msgstr "https://github.com/DiscipleTools"
