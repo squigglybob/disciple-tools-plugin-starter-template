@@ -57,4 +57,4 @@ jobs:
           commit-message: 'update pot translation file'
 
       - name: Check git config
-        run: git config --list
+        run: git config --list --global
