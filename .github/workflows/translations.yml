@@ -56,5 +56,5 @@ jobs:
           push-branch: master
           commit-message: 'update pot translation file'
 
-      - name: Check git status
-        run: git status
+      - name: Check git config
+        run: git config --list
