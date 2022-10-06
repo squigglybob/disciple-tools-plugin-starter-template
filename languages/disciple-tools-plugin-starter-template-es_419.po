@@ -16,9 +16,9 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;es"
-"c_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_n"
-"x_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: */libraries/*\n"
@@ -31,7 +31,8 @@ msgstr "Llamada de Prueba a la API"
 msgid "Magic Url"
 msgstr "Url Mágica"
 
-#: magic-link/magic-link-post-type.php:149 magic-link/magic-link-user-app.php:124
+#: magic-link/magic-link-post-type.php:149
+#: magic-link/magic-link-user-app.php:124
 msgid "Add Magic"
 msgstr "Agregar Magia"
 
@@ -175,8 +176,8 @@ msgstr "Agregar miembros desde contactos existentes"
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
 msgid ""
-"In the 'Member List' field, type the name of an existing contact to add them to this "
-"group."
+"In the 'Member List' field, type the name of an existing contact to add them "
+"to this group."
 msgstr ""
 "En el campo de 'Listado de miembros', escribe el nombre de un contacto "
 "existente para agregarlo a este grupo."
@@ -287,8 +288,8 @@ msgstr "Pausado"
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
 msgid ""
-"This contact is currently on hold. It has potential of getting scheduled in the "
-"future."
+"This contact is currently on hold. It has potential of getting scheduled in "
+"the future."
 msgstr ""
 
 #: tile/custom-tile.php:124

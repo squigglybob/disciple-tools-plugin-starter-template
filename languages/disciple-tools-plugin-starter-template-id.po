@@ -16,9 +16,9 @@ msgstr ""
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;es"
-"c_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_n"
-"x_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: */libraries/*\n"
@@ -31,7 +31,8 @@ msgstr ""
 msgid "Magic Url"
 msgstr ""
 
-#: magic-link/magic-link-post-type.php:149 magic-link/magic-link-user-app.php:124
+#: magic-link/magic-link-post-type.php:149
+#: magic-link/magic-link-user-app.php:124
 msgid "Add Magic"
 msgstr ""
 
@@ -166,7 +167,8 @@ msgstr "Pilih"
 
 #: post-type/module-base.php:469
 msgid "To add new members, click on 'Create' or 'Select'."
-msgstr "Untuk menambah anggota baru, silahkan klik \"membuat\" atau \"memilih\""
+msgstr ""
+"Untuk menambah anggota baru, silahkan klik \"membuat\" atau \"memilih\""
 
 #: post-type/module-base.php:475
 msgctxt "Add members modal"
@@ -176,8 +178,8 @@ msgstr "Tambah anggota dari kontak-kontak yang sudah ada"
 #: post-type/module-base.php:476
 msgctxt "Add members modal"
 msgid ""
-"In the 'Member List' field, type the name of an existing contact to add them to this "
-"group."
+"In the 'Member List' field, type the name of an existing contact to add them "
+"to this group."
 msgstr ""
 "Dalam field \"Daftar Anggota\", ketiklah nama kontak yang sudah ada, dan "
 "tambahkan mereka ke dalam kelompok ini."
@@ -288,8 +290,8 @@ msgstr "Lagi pause"
 #: tile/custom-tile.php:120
 msgctxt "Training Status field description"
 msgid ""
-"This contact is currently on hold. It has potential of getting scheduled in the "
-"future."
+"This contact is currently on hold. It has potential of getting scheduled in "
+"the future."
 msgstr ""
 
 #: tile/custom-tile.php:124
