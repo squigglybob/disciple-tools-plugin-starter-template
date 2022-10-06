@@ -40,9 +40,21 @@ jobs:
               --exclude=""
       #######################
 
+      - name: Check diff output
+        run: git diff | wc -l
+
+      - name: Add changes
+        run: git add -A
+
+      - name: Check status
+        run: git status
+
       - name: push changes
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: master
           commit-message: 'update pot translation file'
+
+      - name: Check git status
+        run: git status
