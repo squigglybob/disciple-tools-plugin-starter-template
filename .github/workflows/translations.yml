@@ -2,9 +2,12 @@ name: translation-workflow
 run-name: regenerating pot file on translation branch
 
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: ["Release"]
+    types: [requested]
+#  push:
+#    branches:
+#      - master
   workflow_dispatch:
 
 concurrency:
