@@ -1,31 +1,23 @@
+# Copyright (C) 2022 
+# This file is distributed under the same license as the Disciple.Tools - Plugin Starter Template plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
+"Project-Id-Version: Disciple.Tools - Plugin Starter Template 0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/disciple-tools-"
 "plugin-starter-template\n"
 "POT-Creation-Date: 2022-10-07T11:13:02+01:00\n"
-"PO-Revision-Date: 2022-09-23 14:09+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
-"Language-Team: Czech <https://translate.disciple.tools/projects/disciple-"
-"tools/disciple-tools-plugin-starter-template/cs/>\n"
-"Language: cs\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.1\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
-"X-Poedit-WPHeader: disciple-tools-plugin-starter-template.php\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SearchPathExcluded-1: */libraries/*\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: disciple-tools-plugin-starter-template\n"
 
-#: admin/admin-menu-and-tabs.php:40 admin/admin-menu-and-tabs.php:49
+#: admin/admin-menu-and-tabs.php:40
+#: admin/admin-menu-and-tabs.php:49
 #: tile/custom-tile.php:32
 msgid "Plugin Starter Template"
 msgstr ""
@@ -34,7 +26,8 @@ msgstr ""
 msgid "Sample API Call In Theory"
 msgstr ""
 
-#: magic-link/magic-link-map.php:99 magic-link/magic-link-non-object.php:117
+#: magic-link/magic-link-map.php:99
+#: magic-link/magic-link-non-object.php:117
 #: magic-link/magic-link-user-app.php:167
 #: magic-link/post-type-magic-link/magic-link-post-type.php:102
 msgid "Add Magic"
@@ -44,30 +37,28 @@ msgstr ""
 msgid "Magic Url"
 msgstr ""
 
-#: post-type/loader.php:22 post-type/module-base.php:63
+#: post-type/loader.php:22
+#: post-type/module-base.php:63
 #: post-type/module-base.php:79
-#, fuzzy
-#| msgid "Start Date"
 msgid "Starter"
-msgstr "Datum začátku"
+msgstr ""
 
 #: post-type/loader.php:27
 msgid "Default starter functionality"
 msgstr ""
 
-#: post-type/module-base.php:64 post-type/module-base.php:80
-#, fuzzy
-#| msgid "Start Date"
+#: post-type/module-base.php:64
+#: post-type/module-base.php:80
 msgid "Starters"
-msgstr "Datum začátku"
+msgstr ""
 
 #: post-type/module-base.php:95
 msgid "Multiplier"
-msgstr "Násobitel"
+msgstr ""
 
 #: post-type/module-base.php:137
 msgid "Status"
-msgstr "Stav"
+msgstr ""
 
 #: post-type/module-base.php:138
 msgid "Set the current status."
@@ -75,7 +66,7 @@ msgstr ""
 
 #: post-type/module-base.php:142
 msgid "Inactive"
-msgstr "Neaktivní"
+msgstr ""
 
 #: post-type/module-base.php:143
 msgid "No longer active."
@@ -83,36 +74,31 @@ msgstr ""
 
 #: post-type/module-base.php:147
 msgid "Active"
-msgstr "Aktivní"
+msgstr ""
 
 #: post-type/module-base.php:148
-#, fuzzy
-#| msgid "Inactive"
 msgid "Is active."
-msgstr "Neaktivní"
+msgstr ""
 
 #: post-type/module-base.php:158
 msgid "Assigned To"
-msgstr "Přiřazen"
+msgstr ""
 
 #: post-type/module-base.php:159
 msgid "Select the main person who is responsible for reporting on this record."
 msgstr ""
-"Vyberte hlavní osobu, která je odpovědná za podávání zpráv o této skupině."
 
 #: post-type/module-base.php:173
 msgid "Start Date"
-msgstr "Datum začátku"
+msgstr ""
 
 #: post-type/module-base.php:181
 msgid "End Date"
-msgstr "Datum ukončení"
+msgstr ""
 
 #: post-type/module-base.php:189
-#, fuzzy
-#| msgid "Select"
 msgid "Multi-Select"
-msgstr "Vybrat"
+msgstr ""
 
 #: post-type/module-base.php:190
 msgid "Multi Select Field"
@@ -142,27 +128,22 @@ msgstr ""
 msgid "Item 3."
 msgstr ""
 
-#: post-type/module-base.php:217 post-type/module-base.php:226
+#: post-type/module-base.php:217
+#: post-type/module-base.php:226
 msgid "Locations"
-msgstr "Místa"
+msgstr ""
 
 #: post-type/module-base.php:218
-#, fuzzy
-#| msgctxt "Optional Documentation"
-#| msgid "The general location where this contact is located."
 msgid "The general location where this contact is located."
-msgstr "Obecné umístění, kde se tento kontakt nachází."
+msgstr ""
 
 #: post-type/module-base.php:227
-#, fuzzy
-#| msgctxt "Optional Documentation"
-#| msgid "The general location where this contact is located."
 msgid "The general location where this record is located."
-msgstr "Obecné umístění, kde se tento kontakt nachází."
+msgstr ""
 
 #: post-type/module-base.php:235
 msgid "Address"
-msgstr "Adresa"
+msgstr ""
 
 #: post-type/module-base.php:258
 msgid "Parents"
@@ -178,7 +159,7 @@ msgstr ""
 
 #: post-type/module-base.php:297
 msgid "People Groups"
-msgstr "Skupiny lidí"
+msgstr ""
 
 #: post-type/module-base.php:298
 msgid "The people groups connected to this record."
@@ -190,36 +171,33 @@ msgstr ""
 
 #: post-type/module-base.php:365
 msgid "Connections"
-msgstr "Spojení"
+msgstr ""
 
 #: post-type/module-base.php:366
 msgid "Other"
-msgstr "Jiné"
+msgstr ""
 
 #: post-type/module-base.php:383
 msgid "Custom Section Contact"
 msgstr ""
 
 #: post-type/module-base.php:539
-#, fuzzy
-#| msgctxt "List Filters"
-#| msgid "Assigned to me"
 msgid "Assigned to me"
-msgstr "Přiděleno mně"
+msgstr ""
 
-#: post-type/module-base.php:547 post-type/module-base.php:604
+#: post-type/module-base.php:547
+#: post-type/module-base.php:604
 #: post-type/module-base.php:612
-#, fuzzy
-#| msgctxt "List Filters"
-#| msgid "All"
 msgid "All"
-msgstr "Všechno"
+msgstr ""
 
 #: tile/custom-tile.php:33
 msgid "A Beautiful Tile"
 msgstr ""
 
-#: tile/custom-tile.php:63 tile/custom-tile.php:132 tile/custom-tile.php:138
+#: tile/custom-tile.php:63
+#: tile/custom-tile.php:132
+#: tile/custom-tile.php:138
 msgid "Text"
 msgstr ""
 
@@ -291,24 +269,25 @@ msgid "Communication Channel"
 msgstr ""
 
 #: tile/custom-tile.php:152
-#, fuzzy
-#| msgid "Select"
 msgid "User Select"
-msgstr "Vybrat"
+msgstr ""
 
 #: tile/custom-tile.php:157
 msgid "Array"
 msgstr ""
 
-#: tile/custom-tile.php:167 tile/custom-tile.php:174
+#: tile/custom-tile.php:167
+#: tile/custom-tile.php:174
 msgid " Date Field"
 msgstr ""
 
-#: tile/custom-tile.php:182 tile/custom-tile.php:187
+#: tile/custom-tile.php:182
+#: tile/custom-tile.php:187
 msgid "Boolean"
 msgstr ""
 
-#: tile/settings-tile.php:43 tile/settings-tile.php:61
+#: tile/settings-tile.php:43
+#: tile/settings-tile.php:61
 msgid "Custom Settings Section"
 msgstr ""
 
@@ -321,54 +300,3 @@ msgstr ""
 msgctxt "Optional Documentation"
 msgid "Add your own help information into this modal."
 msgstr ""
-
-#~ msgid "Tags"
-#~ msgstr "Značky"
-
-#~ msgid "Follow"
-#~ msgstr "Sledovat"
-
-#~ msgid "Un-Follow"
-#~ msgstr "Zrušit sledování"
-
-#~ msgid "Tasks"
-#~ msgstr "Úkoly"
-
-#~ msgctxt "input field placeholder"
-#~ msgid "Search Users"
-#~ msgstr "Hledat uživatele"
-
-#~ msgid "Member List"
-#~ msgstr "Seznam členů"
-
-#~ msgid "Create"
-#~ msgstr "Vytvořit"
-
-#~ msgid "To add new members, click on 'Create' or 'Select'."
-#~ msgstr "Chcete-li přidat nové členy, klikněte na „Vytvořit“ nebo „Vybrat“."
-
-#~ msgctxt "Add members modal"
-#~ msgid "Add members from existing contacts"
-#~ msgstr "Přidejte členy ze stávajících kontaktů"
-
-#~ msgctxt "Add members modal"
-#~ msgid ""
-#~ "In the 'Member List' field, type the name of an existing contact to add "
-#~ "them to this group."
-#~ msgstr ""
-#~ "Do pole „Seznam členů“ zadejte jméno existujícího kontaktu a přidejte jej "
-#~ "do této skupiny."
-
-#~ msgid "Close"
-#~ msgstr "Zavřít"
-
-#~ msgctxt "Training Status label"
-#~ msgid "New"
-#~ msgstr "Nový"
-
-#~ msgctxt "Training Status label"
-#~ msgid "Paused"
-#~ msgstr "Pozastaveno"
-
-#~ msgid "https://github.com/DiscipleTools"
-#~ msgstr "https://github.com/DiscipleTools"
