@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Disciple Tools - Plugin Starter Template\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/disciple-tools-"
 "plugin-starter-template\n"
-"POT-Creation-Date: 2022-10-07T09:00:31+00:00\n"
+"POT-Creation-Date: 2022-10-07T11:13:02+01:00\n"
 "PO-Revision-Date: 2022-09-23 14:09+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Tamil <https://translate.disciple.tools/projects/disciple-"
@@ -24,16 +24,6 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SearchPathExcluded-1: */libraries/*\n"
-
-#. Plugin Name of the plugin
-msgid "Disciple.Tools - Plugin Starter Template"
-msgstr ""
-
-#. Description of the plugin
-msgid ""
-"Disciple.Tools - Plugin Starter Template is intended to help developers and "
-"integrator jumpstart their extension of the Disciple.Tools system."
-msgstr ""
 
 #: admin/admin-menu-and-tabs.php:40 admin/admin-menu-and-tabs.php:49
 #: tile/custom-tile.php:32
