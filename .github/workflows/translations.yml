@@ -33,6 +33,7 @@ jobs:
       # remove/edit --subtract option
       # edit --domain option
       # add any folders for excluding if necessary in --exclude option
+      #######################
       - name: Generate new pot file
         run: >
               wp i18n make-pot . languages/default.pot  --skip-audit --subtract="languages/terms_to_exclude.pot"
@@ -49,6 +50,11 @@ jobs:
       - name: Check status
         run: git status
 
+      #######################
+      ### MAKE EDITS HERE ###
+      #######################
+      # edit name and email
+      #######################
       - name: push changes
         uses: github-actions-x/commit@master
         with:
@@ -57,6 +63,7 @@ jobs:
           commit-message: 'update pot translation file'
           name: squigglybob
           email: nathinabob@gmail.com
+      #######################
 
       - name: Check git config
         run: git config --list --show-origin
